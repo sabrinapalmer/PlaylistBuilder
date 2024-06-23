@@ -1,0 +1,37 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* layout */
+:root {
+  --primary: #a80874;
+  --error: #ff0051;
+}
+body {
+  background: #d3d3d3;
+  margin: 0;
+  font-family: "Josefin Sans";
+}
+header {
+  background: #ebebeb;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #343a1a;
+  text-decoration: none;
+}
+header a:hover {
+  color: #515a27;
+  text-decoration: none;
+}
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}

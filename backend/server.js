@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -8,6 +9,7 @@ const searchSettingsRoutes = require("./routes/searchSettings");
 const app = express();
 
 // middleware
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 app.use((request, response, next) => {
   console.log(request.path, request.method);

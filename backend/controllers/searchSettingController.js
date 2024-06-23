@@ -61,7 +61,7 @@ const updateSearchSetting = async (request, response) => {
     return response.status(404).json({ error: "Invalid search setting ID" });
   }
 
-  // const updates = { ...resposnse.body }
+  // const updates = { ...response.body }
   // const oldSetting = await SearchSetting.findById(id);
   // const oldParameters = oldSetting.parameters[0].toJSON();
 
