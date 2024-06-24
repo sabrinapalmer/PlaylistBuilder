@@ -3,61 +3,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const SeedSchema = new Schema({
-  seedType: {
-    type: String,
-    required: true,
-  },
-  seedValue: {
-    type: String,
-    required: true,
-  },
-});
-
-const ZeroOneRangeSetting = new Schema({
-  minValue: { type: Number, min: 0, max: 1, required: false },
-  maxValue: { type: Number, min: 0, max: 1, required: false },
-  targetValue: { type: Number, min: 0, max: 1, required: false },
-});
-
-const ZeroOneHundredRangeSetting = new Schema({
-  minValue: { type: Number, min: 0, max: 100, required: false },
-  maxValue: { type: Number, min: 0, max: 100, required: false },
-  targetValue: { type: Number, min: 0, max: 100, required: false },
-});
-
-const ZeroElevenRangeSetting = new Schema({
-  minValue: { type: Number, min: 0, max: 11, required: false },
-  maxValue: { type: Number, min: 0, max: 11, required: false },
-  targetValue: { type: Number, min: 0, max: 11, required: false },
-});
-
-const ThreeSevenRangeSetting = new Schema({
-  minValue: { type: Number, min: 3, max: 7, required: false },
-  maxValue: { type: Number, min: 3, max: 7, required: false },
-  targetValue: { type: Number, min: 3, max: 7, required: false },
-});
-
-const MinZeroRangeSetting = new Schema({
-  minValue: { type: Number, min: 0, required: false },
-  maxValue: { type: Number, min: 0, required: false },
-  targetValue: { type: Number, min: 0, required: false },
+  seedType: { type: String, required: true },
+  seedValue: { type: String, required: true },
 });
 
 const ParamsSchema = new Schema({
-  acousticness: [ZeroOneRangeSetting],
-  danceability: [ZeroOneRangeSetting],
-  durationMS: [MinZeroRangeSetting],
-  energy: [ZeroOneRangeSetting],
-  instrumentalness: [ZeroOneRangeSetting],
-  key: [ZeroElevenRangeSetting],
-  liveness: [ZeroOneRangeSetting],
-  loudness: [ZeroOneRangeSetting],
-  mode: [ZeroOneRangeSetting],
-  popularity: [ZeroOneHundredRangeSetting],
-  speechiness: [ZeroOneRangeSetting],
-  tempo: [MinZeroRangeSetting],
-  timeSignature: [ThreeSevenRangeSetting],
-  valence: [ZeroOneRangeSetting],
+  paramType: { type: String, required: false },
+  minValue: { type: Number, required: false },
+  maxValue: { type: Number, required: false },
+  targetValue: { type: Number, required: false },
 });
 
 const searchSettingSchema = new Schema(

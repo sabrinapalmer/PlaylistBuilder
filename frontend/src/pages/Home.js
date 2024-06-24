@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
-const Home = () => {
+//components
+import SearchSettingChip from "../components/SearchSettingChip";
+import SearchSettingForm from "../components/SearchSettingForm";
+
+const Home = ({ accessToken }) => {
   const [searchSettings, setSearchSettings] = useState(null);
   useEffect(() => {
     const fetchSearchSettings = async () => {
       const response = await fetch("http://localhost:4000/api/searchSettings");
-      console.log(response);
       const json = await response.json();
-      console.log(json);
 
       if (response.ok) {
         setSearchSettings(json);
@@ -21,9 +23,13 @@ const Home = () => {
       <div className="searchSettings">
         {searchSettings &&
           searchSettings.map((searchSetting) => (
-            <p key={searchSetting._id}>{searchSetting.title}</p>
+            <SearchSettingChip
+              key={searchSetting._id}
+              searchSetting={searchSetting}
+            ></SearchSettingChip>
           ))}
       </div>
+      <SearchSettingForm />
     </div>
   );
 };
