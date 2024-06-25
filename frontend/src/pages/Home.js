@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import SearchSettingChip from "../components/SearchSettingChip";
 import SearchSettingForm from "../components/SearchSettingForm";
 
-const Home = ({ accessToken }) => {
+const Home = () => {
   const [searchSettings, setSearchSettings] = useState(null);
   useEffect(() => {
     const fetchSearchSettings = async () => {
       const response = await fetch("http://localhost:4000/api/searchSettings");
+      console.log(response);
       const json = await response.json();
+      console.log(json);
 
       if (response.ok) {
         setSearchSettings(json);
